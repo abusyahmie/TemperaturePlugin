@@ -40,7 +40,7 @@ var listeners = [];
 // Last returned temperature object from native
 var temperature = null;
 
-// Timer used when faking up devicemotion events
+// Timer used when faking up devicesensor events
 var eventTimerId = null;
 
 // Tells native to start.
@@ -165,10 +165,10 @@ var temperaturesensor = {
         }
 
         if (cordova.platformId === "browser" && !eventTimerId) {
-            // Start firing devicemotion events if we haven't already
-            var devicemotionEvent = new Event('devicemotion');
+            // Start firing devicesensor events if we haven't already
+            var devicesensorEvent = new Event('devicesensor');
             eventTimerId = window.setInterval(function() {
-                window.dispatchEvent(devicemotionEvent);
+                window.dispatchEvent(devicesensorEvent);
             }, 200);
         }
 
@@ -188,7 +188,7 @@ var temperaturesensor = {
             delete timers[id];
 
             if (eventTimerId && Object.keys(timers).length === 0) {
-                // No more watchers, so stop firing 'devicemotion' events
+                // No more watchers, so stop firing 'devicesensor' events
                 window.clearInterval(eventTimerId);
                 eventTimerId = null;
             }

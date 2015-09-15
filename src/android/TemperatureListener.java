@@ -67,7 +67,7 @@ public class TemperatureListener extends CordovaPlugin implements SensorEventLis
     };
 
     /**
-     * Create an temperature listener.
+     * Create a temperature listener.
      */
     public TemperatureListener() {
         this.t = 0;
