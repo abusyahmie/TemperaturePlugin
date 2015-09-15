@@ -3,6 +3,7 @@ Cordova Device Temperature Sensor Plugin
 
 Example code:
 
+```
 <!DOCTYPE html>
 <html>
   <head>
@@ -51,4 +52,4 @@ Example code:
 	<p>getCurrentTemperature</p>
   </body>
 </html>
-
+```
